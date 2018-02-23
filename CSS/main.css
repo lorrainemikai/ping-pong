@@ -2,7 +2,14 @@
   background-color: rgb(104, 127, 198);
 }
 
-.amen {
-  font-size: 200%;
+#amen {
+  font-size: 350%;
   background-color: rgb(63, 163, 136);
+}
+
+#flex {
+  height: 300%;
+  font-size: 350%;
+  background-color: rgb(26, 5, 60);
+  font-style: italic;
 }
