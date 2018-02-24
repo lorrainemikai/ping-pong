@@ -1,5 +1,6 @@
 .jumbotron {
   background-color: rgb(104, 127, 198);
+  font-family: 'Raleway', monospace;
 }
 
 #amen {
@@ -10,6 +11,6 @@
 #flex {
   height: 300%;
   font-size: 350%;
-  background-color: rgb(26, 5, 60);
-  font-style: italic;
+  color: rgb(102, 117, 172);
+  font-family: 'Raleway', sans-serif;
 }
