@@ -1,42 +1,32 @@
-var input = parseInt(prompt("Enter Number")); //get input from the user and change its type to strict interger
-function pingPong(userInput) {
-  // loop over from one to the range given in on the input
-  for (let i = 1; i <= input; i++) {
-    //check the divisiblity of the input if either quaifies in any condition
-    if ((i % 3 === 0) && (i % 5 === 0)) {
-      console.log("PingPong")
-    } else if (i % 3 === 0) {
-      console.log("ping");
+//business logic
+var pingy = [];
 
-    } else if (i % 5 === 0) {
-      console.log("pong");
+function pingPong(number) {
+  for (var index = 1; index <= number; index += 1) {
+    if (index % 15 === 0) {
+      pingy.push("pingpong");
+    } else if (index % 5 === 0) {
+      pingy.push("pong");
+    } else if (index % 3 === 0) {
+      pingy.push("ping");
     } else {
-      console.log(i)
+      pingy.push(index);
     }
   }
 }
-pingPong(input)
 
 
+//user interface logic
 
-var imageSlider = document.getElementsById('imagesSlider');
+$(document).ready(function() {
+  $("form#ping-pong").submit(function() {
+    event.preventDefault();
+    var number = parseInt($("input#number").val());
 
-// Array
-var images = ["url('../img/pic.jpg')", "url('../img/pic1.jpg')",
-  "url('../img/pic2.jpg')", "url('../img/pic3.jpg')", "url('../img/pic4.jpeg')"
-];
+    pingPong(number);
 
-//function
-function carousel() {
-  var counter = 0;
-  imageSlider.style.backgroundImage = images[counter];
-  counter++;
-
-  if (counter > 4) {
-    counter = 0;
-  }
-}
-setInterval(carousel, 3000);
-
-
-Cynthia
+    pingy.forEach(function(number) {
+      $("#output").append('<li>' + number + "</li>");
+    });
+  });
+});
